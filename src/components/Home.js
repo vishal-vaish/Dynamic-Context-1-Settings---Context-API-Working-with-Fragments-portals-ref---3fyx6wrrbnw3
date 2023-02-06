@@ -1,21 +1,14 @@
-import React from "react"
-import { useContext } from "react"
-import { UserContext } from "../context/userContext"
+import React from 'react';
+import { UserContext } from '../context/userContext';
 
-export const Settings = () => {
-
-    // to be implemented in context
-    const { changeGreeting } = useContext(UserContext)
+// do not change this component
+export const Home = () => {
+    const {greeting} = React.useContext(UserContext)
 
     return (
-    <div style={{ border: "5px solid red", padding: "8px" }} id="settings">
-      <h4>Settings</h4>
-      <input
-        type={"text"}
-        onChange={(event) => {
-          changeGreeting(event.target.value);
-        }}
-      />
-    </div>
-  );
-};
+        <div style={{border:'6px solid yellow',padding:'8px', marginTop:'1rem'}} id="home">
+            <h4>Home</h4>
+            {`Current greeting as per setting is:- ${greeting}`}
+        </div>
+    )
+}
